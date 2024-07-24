@@ -20,7 +20,7 @@ model User{
   lastname String
   password String
   division Role @default(BASIC)
-  phone BigInt
+  phone String
   email String @unique
   empId Int
 }
