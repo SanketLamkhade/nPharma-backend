@@ -25,6 +25,38 @@ model User{
   empId Int
 }
 
+model CreateNTP{
+  id Int @default(autoincrement()) @id
+  date String
+  station String
+  tpName String
+  tpType String
+  startTime String
+  endTime String
+  place String
+  empId Int
+  route String
+  pob Int
+  doctorIds String[]
+}
+
+model routes{
+  id Int @default(autoincrement()) @id
+  route String
+  routeDescription String
+  hq String
+}
+
+model customers{
+  id Int @default(autoincrement()) @id
+  route String
+  customerName String
+  dob String
+  phone String
+  address String
+  category String
+}
+
 enum Role{
   BASIC
   ADMIN
