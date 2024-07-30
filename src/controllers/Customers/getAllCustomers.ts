@@ -14,3 +14,12 @@ export const getAllCustomers = async (req: Request, res: Response) => {
       res.status(500).send('Server error');
     }
   };
+
+  export const message = async (req: Request, res: Response) => {
+    try {
+        res.send("welcome to npharma");
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Server error');
+    }
+  };
