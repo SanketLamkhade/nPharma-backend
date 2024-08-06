@@ -1,5 +1,5 @@
 // import { Router } from 'express';
-import { createUser, getUserDetails } from '../controllers/userController';
+import { createUser, findUser, getUserDetails } from '../controllers/userController';
 import { createNtp } from '../controllers/NTP/createNtp';
 import { getAllNtp } from '../controllers/NTP/getAllNtp';
 import { getAllRoutes } from '../controllers/NTP/getAllRoutes';
@@ -17,6 +17,7 @@ router.get('/get-all-ntp', getAllNtp);
 router.get('/get-all-routes', getAllRoutes);
 router.get('/get-route-wise-customer', getRouteWiseCustomer);
 router.get('/get-all-customers', getAllCustomers);
+router.get('/find-user',findUser)
 router.get('/api', message);
 
 module.exports = router;
