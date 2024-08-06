@@ -20,7 +20,7 @@ export const createUser = async (data: UserInput) => {
 };
 
 export const getUserDetails = async (email: string) => {
-  return await prisma.user.findMany({
+  return await prisma.user.findUnique({
     where: { email }
   });
 };
