@@ -6,6 +6,7 @@ import { getAllRoutes } from '../controllers/NTP/getAllRoutes';
 import { getRouteWiseCustomer } from '../controllers/NTP/getRouteWiseCustomer';
 import { getAllCustomers, message } from '../controllers/Customers/getAllCustomers';
 import { createCustomer } from "../controllers/NTP/createCutomer"
+import { logoutAttendance, markAttendance } from '../controllers/Attendance/markAttendanceController';
 
 // const router = Router();
 const express = require('express');
@@ -21,5 +22,7 @@ router.get('/get-all-customers', getAllCustomers);
 router.get('/find-user', findUser)
 router.get('/api', message);
 router.post('/create-new-customer', createCustomer)
+router.post('/mark-attendance', markAttendance)
+router.post('/logout-attendance', logoutAttendance);
 
 module.exports = router;

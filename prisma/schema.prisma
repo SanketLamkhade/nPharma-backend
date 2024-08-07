@@ -57,6 +57,16 @@ model customers{
   category String
 }
 
+model attendance{
+  id Int @default(autoincrement()) @id
+  inTime String
+  outTime String
+  empId String
+  date String
+  empName String
+  status String
+}
+
 enum Role{
   BASIC
   ADMIN
