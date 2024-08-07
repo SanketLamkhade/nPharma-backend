@@ -4,7 +4,8 @@ import { createNtp } from '../controllers/NTP/createNtp';
 import { getAllNtp } from '../controllers/NTP/getAllNtp';
 import { getAllRoutes } from '../controllers/NTP/getAllRoutes';
 import { getRouteWiseCustomer } from '../controllers/NTP/getRouteWiseCustomer';
-import { getAllCustomers,message } from '../controllers/Customers/getAllCustomers';
+import { getAllCustomers, message } from '../controllers/Customers/getAllCustomers';
+import { createCustomer } from "../controllers/NTP/createCutomer"
 
 // const router = Router();
 const express = require('express');
@@ -17,7 +18,8 @@ router.get('/get-all-ntp', getAllNtp);
 router.get('/get-all-routes', getAllRoutes);
 router.get('/get-route-wise-customer', getRouteWiseCustomer);
 router.get('/get-all-customers', getAllCustomers);
-router.get('/find-user',findUser)
+router.get('/find-user', findUser)
 router.get('/api', message);
+router.post('/create-new-customer', createCustomer)
 
 module.exports = router;
