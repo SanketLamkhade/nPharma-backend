@@ -6,7 +6,9 @@ import { getAllRoutes } from '../controllers/NTP/getAllRoutes';
 import { getRouteWiseCustomer } from '../controllers/NTP/getRouteWiseCustomer';
 import { getAllCustomers, message } from '../controllers/Customers/getAllCustomers';
 import { createCustomer } from "../controllers/NTP/createCutomer"
-import { logoutAttendance, markAttendance } from '../controllers/Attendance/markAttendanceController';
+import { logoutAttendance, markAttendance  } from '../controllers/Attendance/markAttendanceController';
+import { regularizeAttendance, fetchDatesWithMissingTimes  } from '../controllers/Attendance/regularizationController';
+
 
 // const router = Router();
 const express = require('express');
@@ -24,5 +26,7 @@ router.get('/api', message);
 router.post('/create-new-customer', createCustomer)
 router.post('/mark-attendance', markAttendance)
 router.post('/logout-attendance', logoutAttendance);
+router.get('/regularize-attendance/dates', fetchDatesWithMissingTimes);
+router.post('/regularize-attendance', regularizeAttendance); 
 
 module.exports = router;
